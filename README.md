@@ -1,6 +1,6 @@
 # homebrew-tools
 
-Homebrew formula for our TinyGo.
+Homebrew formula for our homebrewed software.
 
 ### Usage
 
