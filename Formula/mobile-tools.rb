@@ -4,6 +4,8 @@ class MobileTools < Formula
   url "https://github.com/leancodepl/mobile-tools.git", :branch => 'master'
   version "0.2.0"
 
+  depends_on "jq"
+
   def install
     bin.install "bin/generate-keystores"
     bin.install "bin/poeditor-download"
