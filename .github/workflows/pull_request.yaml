@@ -1,0 +1,20 @@
+name: Verify Formulas
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: brew tap
+        run: brew tap leancodepl/tools
+
+      - name: brew install
+        run: brew install mobile-tools
+
+      - name: brew audit
+        run: brew audit mobile-tools --strict --online
+
+      - name: brew test
+        run: brew test mobile-tools
