@@ -7,10 +7,12 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: brew tap
         run: brew tap leancodepl/tools
 
-      - name: brew install
+      - name: brew install --build-from-source ./Formula/mobile-tools.rb
         run: brew install mobile-tools
 
       - name: brew audit
