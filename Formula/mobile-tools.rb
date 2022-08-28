@@ -7,7 +7,8 @@ class MobileTools < Formula
   depends_on "jq"
 
   def install
-    bin.install "bin/generate-keystores"
+    bin.install "bin/generate-keystore"
     bin.install "bin/poeditor-download"
+    bin.install "bin/echo-changelog"
   end
 end
