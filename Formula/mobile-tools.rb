@@ -1,10 +1,8 @@
 class MobileTools < Formula
-  desc "Useful program for mobile development."
+  desc "Small but useful program for mobile development"
   homepage "https://github.com/leancodepl/mobile-tools"
   url "https://github.com/leancodepl/mobile-tools.git", :branch => 'master'
-  version "0.2.2"
-
-  depends_on "jq"
+  version "1.0.0"
 
   def install
     bin.install "bin/echo_changelog"
