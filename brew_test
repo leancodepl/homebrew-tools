@@ -12,6 +12,9 @@ formulas="$(brew tap-info "$TAP" --json | jq -r '.[]|(.formula_names[],.cask_tok
 failed=0
 
 for formula in $formulas; do
+    echo "Installing $formula"
+    HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source "$formula"
+
     echo "Testing $formula"
     if ! brew test "$formula"; then
         failed=1
