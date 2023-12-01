@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+TAP="${1:-}"
+if [ -z "$TAP" ]; then
+    echo "tap not passed as the first argument"
+    exit 1
+fi
+
+formulas="$(brew tap-info "$TAP" --json | jq -r '.[]|(.formula_names[],.cask_tokens[])')"
+
+failed=0
+
+for formula in $formulas; do
+    echo "Installing $formula"
+    HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source "$formula"
+
+    echo "Testing $formula"
+    if ! brew test "$formula"; then
+        failed=1
+    fi
+done
+
+if [ $failed -ne 0 ]; then
+    echo "There were test failures"
+    exit 1
+fi
