@@ -1,0 +1,27 @@
+name: prepare
+
+on: pull_request
+
+jobs:
+  main:
+    runs-on: macos-latest
+
+    env:
+      TAP: leancodepl/tools
+
+    steps:
+      - name: Tap this repository
+        run: brew tap $TAP
+
+      - name: cd into tap and use current branch
+        run: |
+          cd $(brew --repo $TAP)
+          git checkout $GITHUB_HEAD_REF
+
+      - name: Audit all formulas
+        run: |
+          cd $(brew --repo $TAP)
+          ./brew_audit $TAP
+
+      # - name: Test all formulas
+      #   run: ./brew_test
