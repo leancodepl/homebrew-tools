@@ -1,7 +1,7 @@
 class MobileTools < Formula
   desc "Useful programs for mobile development"
   homepage "https://github.com/leancodepl/mobile-tools"
-  url "https://github.com/leancodepl/mobile-tools.git", :branch => "master"
+  url "https://github.com/leancodepl/mobile-tools.git", branch: "master"
   version "1.2.0"
 
   depends_on "jq"
