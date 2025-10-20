@@ -1,8 +1,8 @@
 class MobileTools < Formula
   desc "Useful programs for mobile development"
   homepage "https://github.com/leancodepl/mobile-tools"
-  url "https://github.com/leancodepl/mobile-tools.git", branch: "master"
-  version "1.2.0"
+  url "https://github.com/leancodepl/mobile-tools/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "29531cf6be58b1bb2268704f28baf59bb23808e5342950e2faae6eb0d303b3ae"
 
   depends_on "jq"
 
