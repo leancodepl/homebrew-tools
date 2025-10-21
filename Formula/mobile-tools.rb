@@ -20,17 +20,17 @@ class MobileTools < Formula
 
     assert_match(
       "true",
-      shell_output(bin/"is_prerelease maestro-v0.6.9"),
+      shell_output("#{bin}/is_prerelease maestro-v0.6.9"),
     )
 
     assert_match(
       "false",
-      shell_output(bin/"is_prerelease maestro-v1.2.3"),
+      shell_output("#{bin}/is_prerelease maestro-v1.2.3"),
     )
 
     assert_match(
       "https://pub.dev/packages/maestro/changelog#4203",
-      shell_output(bin/"link_changelog maestro v4.2.0+3"),
+      shell_output("#{bin}/link_changelog maestro v4.2.0+3"),
     )
   end
 end
